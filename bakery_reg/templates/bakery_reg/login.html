@@ -1,0 +1,16 @@
+{% extends "bakery_reg/base.html" %}
+{% block body %}
+    <div class="content-section">
+        <form method="POST">
+            {% csrf_token %}
+                <h3>Введите логин - {{ form.username }}</h3>
+                <h3>Введите пароль - {{ form.password }}</h3>
+            <div>
+                <button>Войти</button>
+            </div>
+        </form>
+        <div>
+            Нужен аккаунт? <a href="{% url 'register' %}">Регистрация</a>
+        </div>
+    </div>
+{% endblock %}
