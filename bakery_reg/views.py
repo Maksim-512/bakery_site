@@ -7,11 +7,6 @@ from .forms import RegistrationForm, LoginForm
 from django.contrib import messages
 
 
-def main(request):
-    return render(request,
-                  'bakery_reg/main.html')
-
-
 # def register(request):
 #     if request.method == 'POST':
 #         form = RegistrationForm(request.POST)
@@ -43,7 +38,7 @@ class CustomLoginView(LoginView):
     extra_context = {'title': 'Авторизация на сайте'}
 
     def get_success_url(self):
-        return reverse_lazy('main')
+        return reverse_lazy('new_main')
 
 # def login(request):
 #     return render(request, 'bakery_reg/login.html', {'form': form})
