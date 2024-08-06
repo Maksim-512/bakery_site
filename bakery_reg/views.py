@@ -40,12 +40,3 @@ class CustomLoginView(LoginView):
     def get_success_url(self):
         return reverse_lazy('new_main')
 
-# def login(request):
-#     return render(request, 'bakery_reg/login.html', {'form': form})
-
-# class RegUser(View):
-#
-#     def get(self):
-#
-#
-#     def post(self):

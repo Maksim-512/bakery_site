@@ -1,0 +1,22 @@
+{% extends 'bakery_main/base_main.html' %}
+{% block title %}{{ title }}{% endblock %}
+
+{% block body %}
+    <div class="container mt-3">
+        <h2>Профиль пользователя {{ user }}</h2>
+            <h3 class="mb-3">Информация:</h3>
+                <p>
+                    <b>Имя пользователя:</b> {{ user.username }}
+                    <br>
+                    <b>Почта:</b> {{ user.email }}
+                    {% if user_profile.first_name %}
+                        <br>
+                        <b>Имя:</b> {{ user.first_name }}
+                    {% endif %}
+                    {% if user.last_name %}
+                        <br>
+                        <b>Фамилия:</b> {{ user.last_name }}</p>
+                    {% endif %}
+    </div>
+<a href="{% url 'new_main' %}">На домашнюю страницу</a>
+{% endblock %}
